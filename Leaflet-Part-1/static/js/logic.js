@@ -80,7 +80,7 @@ function createMap(earthquakes) {
         Earthquakes: earthquakes
     };
 
-    // Add the street layer and earthquakes layer to the map
+    // Add the outdoor layer and earthquakes layer to the map
     map.addLayer(outdoor);
     map.addLayer(earthquakes);
 
