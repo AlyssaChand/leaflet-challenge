@@ -1,6 +1,6 @@
 # leaflet-challenge
 
-These are the sources I used to help write my code: leafletjs.com, openstreetmap.org, google, and BCS — watching our cloud recordings, using instructor activity solutions and the class activities as references.
+These are the sources I used to help write my code: [USGS GeoJSON Feed](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php), leafletjs.com, openstreetmap.org, google, and BCS — watching our cloud recordings, using instructor activity solutions and the class activities as references.
 
 In this assignment, the task is to develop a way to visualize USGS data that will allow them to better educate the public and other government organizations on issues facing our planet.
 
