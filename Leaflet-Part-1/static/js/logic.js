@@ -3,7 +3,7 @@ var geoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week
 
 // Fetch the data and create features
 d3.json(geoURL).then(data => {
-    console.log(data);  // Debugging: Log the data to ensure it's being fetched correctly
+    console.log(data); 
     createFeatures(data.features);
 });
 
@@ -26,6 +26,8 @@ function getMarkerColor(depth) {
         return 'green';
     }
 }
+
+
 
 // Function to create features from the earthquake data
 function createFeatures(earthquakeData) {
@@ -58,18 +60,19 @@ function createMap(earthquakes) {
     var map = L.map('map').setView([37.09, -95.71], 5);
 
     // Create the base layers
-    let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    var outdoor = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
 
-    let topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+    var grayscale = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        className: 'grayscale-map'
     });
 
     // Create a baseMaps object
     let baseMaps = {
-        "Street Map": street,
-        "Topographic Map": topo
+        "Outdoor": outdoor,
+        "Grayscale": grayscale
     };
 
     // Create an overlay object to hold the overlay layer
@@ -78,7 +81,7 @@ function createMap(earthquakes) {
     };
 
     // Add the street layer and earthquakes layer to the map
-    map.addLayer(street);
+    map.addLayer(outdoor);
     map.addLayer(earthquakes);
 
     // Add a layer control
