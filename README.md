@@ -31,3 +31,14 @@ Here are the steps I did to achieve this:
   The createFeatures function is responsible for creating features from the earthquake data. It defines an onEachFeature function to bind popups to each feature, providing information about the earthquake when its associated marker is clicked. It then creates a GeoJSON      layer (earthquakes) using Leaflet's L.geoJSON method, specifying options for each feature, including marker size and color.
 #### 5. Creating the Map
   The createMap function initializes a Leaflet map centered on the US. It defines two base layers: "Outdoor" and "Grayscale". The "Outdoor" layer is a standard map, while the "Grayscale" layer is the same map but with a grayscale style. These layers are added to the         baseMaps object. The overlayMaps object contains a single entry for the earthquake data. The outdoor layer and earthquake layer are added to the map. Additionally, a layer control is added to allow users to toggle between different base layers and overlays. Finally, a     legend is added to the map to provide information about the depth of earthquakes.
+
+### CSS
+
+I added a grayscale filter and styled the legend in the CSS file to ensure that the map is displayed correctly and that additional features like the grayscale filter and legend are both functional and visually appealing.
+
+- ####  Grayscale Filter
+   The .grayscale-map img selector applies a grayscale filter to the map tiles, converting the map to black and white. This is done by setting the CSS filter property to grayscale(100%).
+- ####  Legend Box Styling
+   The .legend class styles the legend box with a white background, padding, rounded corners, and a shadow effect. The font size is set to ensure readability.
+- ####  Legend Items Styling
+   The .legend i class styles the color boxes in the legend. Each box is 20x20 pixels, displayed inline with a small margin for spacing, and aligned with the text for a clean look.
