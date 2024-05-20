@@ -4,9 +4,9 @@ These are the sources I used to help write my code: leafletjs.com, openstreetmap
 
 In this assignment, the task is to develop a way to visualize USGS data that will allow them to better educate the public and other government organizations on issues facing our planet.
 
-## Project Description
+## Assignment Description
 
-This project is part of an activity that is broken down into two parts:
+This assignment is part of an activity that is broken down into two parts:
 
 - Part 1: Create the Earthquake Visualization
 - Part 2: Gather and Plot More Data (Optional with no extra points earning)
