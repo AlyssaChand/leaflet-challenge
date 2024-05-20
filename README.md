@@ -18,3 +18,16 @@ For this repository, only Part 1 has been completed. The code and documentation 
 ![outdoormappopup](https://github.com/AlyssaChand/leaflet-challenge/assets/151655013/07b03936-bf08-4e18-b363-64cc073e8da4)
 
 ![grayscalemap](https://github.com/AlyssaChand/leaflet-challenge/assets/151655013/a0fd5ec9-c8ae-465f-8b5d-c4e312cf6c72)
+
+Here are the steps I did to achieve this:
+
+#### 1. Fetching Earthquake Data
+   The script starts by defining the URL (geoURL) from which earthquake data is fetched from the USGS API.
+#### 2. Fetching and Processing Data
+  It then uses D3.js to fetch the earthquake data asynchronously. Once the data is retrieved, it's logged to the console for debugging purposes, and then the createFeatures function is called, passing in the features of the fetched data.
+#### 3. Determining Marker Size and Color
+  Two functions, getMarkerSize and getMarkerColor, are defined to determine the size and color of the markers based on earthquake magnitude and depth, respectively.
+#### 4. Creating Features
+  The createFeatures function is responsible for creating features from the earthquake data. It defines an onEachFeature function to bind popups to each feature, providing information about the earthquake when its associated marker is clicked. It then creates a GeoJSON      layer (earthquakes) using Leaflet's L.geoJSON method, specifying options for each feature, including marker size and color.
+#### 5. Creating the Map
+  The createMap function initializes a Leaflet map centered on the US. It defines two base layers: "Outdoor" and "Grayscale". The "Outdoor" layer is a standard map, while the "Grayscale" layer is the same map but with a grayscale style. These layers are added to the         baseMaps object. The overlayMaps object contains a single entry for the earthquake data. The outdoor layer and earthquake layer are added to the map. Additionally, a layer control is added to allow users to toggle between different base layers and overlays. Finally, a     legend is added to the map to provide information about the depth of earthquakes.
