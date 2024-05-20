@@ -1,5 +1,5 @@
 // URL to fetch the earthquake data from USGS
-var geoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+let geoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
 // Fetch the data and create features
 d3.json(geoURL).then(data => {
@@ -57,14 +57,14 @@ function createFeatures(earthquakeData) {
 // Function to create the map and add features
 function createMap(earthquakes) {
     // Initialize the map centered on the US
-    var map = L.map('map').setView([37.09, -95.71], 5);
+    let map = L.map('map').setView([37.09, -95.71], 5);
 
     // Create the base layers
-    var outdoor = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    let outdoor = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
 
-    var grayscale = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    let grayscale = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         className: 'grayscale-map'
     });
@@ -90,14 +90,14 @@ function createMap(earthquakes) {
     }).addTo(map);
 
     // Add a legend to the map
-    var legend = L.control({ position: 'bottomright' });
+    let legend = L.control({ position: 'bottomright' });
 
     legend.onAdd = function (map) {
-        var div = L.DomUtil.create('div', 'info legend');
-        var depths = [0, 10, 30, 50, 70];
-        var colors = ['green', 'yellow', 'orange', 'red', 'darkred'];
+        let div = L.DomUtil.create('div', 'info legend');
+        let depths = [0, 10, 30, 50, 70];
+        let colors = ['green', 'yellow', 'orange', 'red', 'darkred'];
     
-        for (var i = 0; i < depths.length; i++) {
+        for (let i = 0; i < depths.length; i++) {
             div.innerHTML +=
                 '<i style="background:' + colors[i] + '"></i> ' +
                 depths[i] + (depths[i + 1] ? '&ndash;' + depths[i + 1] + '<br>' : '+');
