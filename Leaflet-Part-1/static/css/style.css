@@ -9,6 +9,7 @@ html {
   height: 100%;
 }
 
+/* added css styling to legend */
 .legend {
   background: white;
   padding: 10px;
